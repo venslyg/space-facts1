@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fun Space Facts</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50; /* Green */
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    #fact-display {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Fun Space Facts</h1>
+  <button id="generate-fact">Generate Fact</button>
+  <p id="fact-display"></p>
+
+  <script>
+    const facts = [
+      "Space smells like hot metal, welding fumes, and seared steak.",
+      "There's a planet made of diamonds called 55 Cancri e.",
+      "You can't cry in space - tears just clump together in little balls around your eyes.",
+      "Footprints on the Moon will last forever!",
+      "Sunsets on Mars are blue.",
+      "Space is completely silent.",
+      "One day on Venus is longer than a year on Earth.",
+      "The largest mountain in our solar system, Olympus Mons, is on Mars.",
+      "The Milky Way galaxy smells like raspberries and rum.",
+      "There's a giant cloud of alcohol in space called Sagittarius B2."
+    ];
+
+    const factDisplay = document.getElementById("fact-display");
+    const generateButton = document.getElementById("generate-fact");
+
+    generateButton.addEventListener("click", () => {
+      const randomIndex = Math.floor(Math.random() * facts.length);
+      factDisplay.textContent = facts[randomIndex];
+    });
+  </script>
+</body>
+</html>
